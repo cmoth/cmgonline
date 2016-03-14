@@ -70,9 +70,13 @@ $(function(){
 	//Move the menu and load the output from map.pl.
 	$("#mapbutton").on("tap click", function() {
 		//Some function calling the array from map.pl and print it to screen.
-		$.get("map.pl", function(data, status){
-			$("#pvpwrap").load(data);
-		});
+		$.ajax({
+			method: "GET", 
+			url: "/cgi-bin/map.pl", 
+			success: function(data){
+				$("#pvpwrap").text(data);
+			}
+			});
 		$("#pvpwrap").css("z-index", 5);
 		$("#menuwrap").css("z-index", 0);
 		

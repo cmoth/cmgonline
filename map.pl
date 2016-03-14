@@ -21,7 +21,8 @@ sub create_grid{
 	$grid = &set_grid($grid);
 	$grid = &create_room($grid);
 
-	dump $grid;
+	# Output test.
+	#dump $grid;
 	return $grid;
 }
 
